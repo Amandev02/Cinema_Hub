@@ -1,9 +1,11 @@
-import "./header.css" ;
+import "./header.css";
 
-function Header(){
+const Header = () => {
   return (
-    <span className="header">🎬Cinema Hub🎬</span>
-  )
+    <span onClick={() => window.scroll(0, 0)} className="header">
+      🎬 Cine maaa 🎥
+    </span>
+  );
 };
 
 export default Header;

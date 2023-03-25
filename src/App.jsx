@@ -1,6 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes} from "react-router-dom";
+import SimpleBottomNavigation from "./components/MainNav";
+import Movies from './components/Pages/Movies/Movies';
+import Series from './components/Pages/Series/Series';
+import Search from './components/Pages/Search/Search';
+import Trending from './components/Pages/Trending/Trending';
 import './App.css'
 import Header from './components/Header/header.jsx'
 
@@ -11,13 +15,14 @@ function App() {
     <BrowserRouter>
     <Header/>
     <div className='app'>
-    <Switch>
-      <Route path="/" component={Trending} exact/>
-      <Route path="/movies" component={Movies}/>
-      <Route path="/series" component={Series}/>
-      <Route path="/search" component={Search}/>
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Trending/>} exact/>
+      <Route path="/movies" element={<Movies/>}/>
+      <Route path="/series" element={<Series/>}/>
+      <Route path="/search" element={<Search/>}/>
+    </Routes>
       </div>
+      <SimpleBottomNavigation/>
       </BrowserRouter>
   
   )
